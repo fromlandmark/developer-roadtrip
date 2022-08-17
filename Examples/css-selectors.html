@@ -1,0 +1,152 @@
+<!-- CSS -->
+
+<style>
+    .flex {
+        display: flex;
+    }
+
+
+    /* 
+        1- Selector por elemento
+        2- Selector por classe
+        3- Selector por ID
+        4- Agrupar selectores [,]
+        5- Combinadores 
+            Descendant Selector (space)
+            Child Selector (>)
+            Adjacent Sibling Selector (+)
+            General Sibling Selector (~)
+        6- Descendentes (space)
+    */
+    /* Selectores de Elementos */
+    /* div {
+        border: 1px solid orange;
+    } */
+
+    /* Aqui funciona o css. */
+    /* Classes - Definem tipos de elementos que pertencem ao mesmpo tipo (class)*/
+    .box {
+        width: 300px;
+        height: 300px;
+        background: gainsboro;
+        margin: 5px;
+    }
+
+    /* Selected únicos, raros de usar no css por serem demasiado específicos. Um ID é um ID. Esse ID Não se repete noutro elemento. */
+    #unique-id {
+        background: red;
+    }
+
+    /* agregar outras caracteríticas que tornam a .box diferente */
+    /* a .box, continua a ser uma caixa em nada diferente das outras .box(s), no entanto, esta tem algo diferente, é só maior. */
+    /*  Podemos agregar n classes a cada elemento. 
+        No entanto, só pode haver um ID por cada elemento.
+    */
+    .box-large {
+        height: 500px;
+    }
+
+
+
+    /* Combinadores */
+    /* Descendentes */
+    /* .box p,
+    .box span {
+        color: red;
+    } */
+
+    /* Adjacente
+        Afeta o <p> imediatamente a seguir ao <span>
+    */
+    /* span+p {
+        color: blue;
+    } */
+
+    /* General Sibling */
+    div~p {
+        color: pink;
+    }
+
+    /* Especiais */
+    /* div:not(.box) {
+        border: 1px solid orange;
+    } */
+</style>
+<!-- HTML -->
+<div class="flex">
+    <div class="box"></div>
+    <div class="box" id="unique-id"></div>
+    <div class="box box-large"></div>
+    <div class="box">
+        <p>paragraph</p>
+        <span>Span</span>
+        <p>paragraph</p>
+    </div>
+    <div class="box"></div>
+
+    <p>Paragraph after boxes</p>
+</div>
+
+
+
+
+<!-- Pseudo Classes (:) -->
+<!-- Alteram com interção do usuario -->
+<style>
+    button {
+        background: blueviolet;
+        color: white;
+        padding: 12px 16px;
+        border: 0;
+        border-radius: 2px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background: black;
+    }
+
+    button:disabled {
+        background: gray;
+    }
+
+    button:focus {
+        background: orange;
+    }
+</style>
+<button>I'm a button</button>
+<button disabled>I'm a button</button>
+
+
+<!-- pseudo elementos (::) -->
+<!-- são partes presentes do nosso elemento -->
+
+<style>
+    .pseudo {
+        color: black;
+    }
+
+    .pseudo::first-letter {
+        color: red;
+    }
+
+    .pseudo::first-line {
+        background: blue;
+    }
+
+    .pseudo::after {
+        content: 'IM AFTER PARAGRAPH'
+    }
+
+    .pseudo::before {
+        content: 'IM BEFORE PARAGRAPH'
+    }
+</style>
+
+<p class="pseudo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ipsam. Minima ea at, mollitia,
+    assumenda, pariatur deleniti eius corrupti minus a error laborum atque cum esse maxime? Tempora labore molestias
+    maxime magnam, mollitia delectus quaerat dolore odio iure quisquam reiciendis non hic, laudantium culpa facere,
+    veritatis nemo nostrum perferendis placeat expedita nobis sint modi quasi. Alias accusamus dolore amet. Aliquam
+    possimus libero non facilis incidunt reprehenderit corporis, doloremque nostrum fugiat vitae. Aut consectetur iusto
+    doloribus numquam voluptas, molestias illum incidunt in expedita magni eum nostrum iste voluptatum ab sapiente sint
+    cupiditate blanditiis totam saepe hic eos iure provident? Laboriosam, amet!</p>

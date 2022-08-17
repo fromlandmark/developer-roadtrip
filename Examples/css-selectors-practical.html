@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- https://www.figma.com/file/8uRhUPlzoLNwXIALiPhqyS/Material-Design---Button-(Community)?node-id=2%3A6738 -->
+</head>
+<style>
+    .grid {
+        margin: 32px;
+    }
+
+    .btn {
+        background: #2F80ED;
+        padding: 12px 16px;
+        color: white;
+        border: 0;
+        border-radius: 4px;
+        outline: none;
+        border: 1px solid transparent;
+        display: inline-block;
+        position: relative;
+    }
+
+    .btn--outline {
+        background: transparent;
+        border: 1px solid #2F80ED;
+        color: #2F80ED;
+    }
+
+    .btn--small {
+        padding: 8px 12px;
+    }
+
+    .btn--link {
+        background: transparent;
+        padding: 0 4px;
+        color: #2F80ED;
+    }
+
+    .btn[type="danger"],
+    .btn--danger {
+        background: red;
+    }
+
+    .btn[disabled] {
+        background: gainsboro;
+        opacity: .5;
+    }
+
+    .btn:hover:not([disabled]) {
+        cursor: pointer;
+    }
+
+    /* com pseudo elementos */
+    .btn:is(.btn--link):hover::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        display: inline-block;
+        height: 2px;
+        width: 100%;
+        background: blue;
+    }
+
+
+    /* with tooltip */
+    /* .btn[title]:hover::before { */
+    .btn:hover::before {
+        content: attr(title);
+        position: absolute;
+        top: -100%;
+        left: 0;
+        color: rgb(246, 246, 246);
+        background: rgb(73, 73, 73);
+        padding: 8px 12px;
+    }
+</style>
+
+<body>
+
+    <div class="grid">
+        <button class="btn btn--small">I'm a button</button>
+        <button class="btn btn--small">I'm a button</button>
+        <button class="btn btn--small btn--danger">I'm abutton</button>
+        <button class="btn btn--small" type="danger">I'm a button</button>
+        <button class="btn btn--small" disabled>I'm a button</button>
+    </div>
+
+
+    <div class="grid">
+        <button class="btn btn--outline">I'm a button</button>
+        <button class="btn btn--outline">I'm a button</button>
+        <button class="btn btn--outline">I'm abutton</button>
+        <button class="btn btn--outline">I'm a button</button>
+        <button class="btn btn--outline">I'm a button</button>
+    </div>
+
+    <div class="grid">
+        <button class="btn btn--small btn--outline">I'm a button</button>
+        <button class="btn btn--small btn--outline">I'm a button</button>
+        <button class="btn btn--small btn--outline">I'm abutton</button>
+        <button class="btn btn--small btn--outline">I'm a button</button>
+        <button class="btn btn--small btn--outline">I'm a button</button>
+    </div>
+
+    <div class="grid">
+        <button class="btn btn--link">I'm a button</button>
+        <button class="btn btn--link">I'm a button</button>
+        <button class="btn btn--link">I'm abutton</button>
+        <button class="btn btn--link">I'm a button</button>
+        <button class="btn btn--link">I'm a button</button>
+    </div>
+
+
+    <div class="grid">
+        <button class="btn" title="I have a tooltip">Button with tooltip</button>
+    </div>
+</body>
+
+</html>
