@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            min-height: 100vh;
+            background: rgb(50, 50, 50);
+        }
+
+        .circle {
+            background: yellow;
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            position: relative;
+            animation-name: pulse;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                left: 0;
+                background: yellow;
+                transform: scale(100%)
+            }
+
+            50% {
+                left: 50%;
+                background: orange;
+                transform: scale(50%)
+            }
+
+            100% {
+                left: 80%;
+                background: blue;
+                transform: scale(100%)
+            }
+        }
+    </style>
+
+    <div class="circle"></div>
+</body>
+
+</html>
