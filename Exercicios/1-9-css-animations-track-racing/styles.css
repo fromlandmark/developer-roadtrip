@@ -1,0 +1,193 @@
+html, body {
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    margin: 32px 0;
+}
+
+.track {
+    width: 100%;
+    display: inline-block;
+    height: 64px;
+    background: green;
+    position: relative;
+}
+
+.track::before {
+    content: '';
+    height: 2px;
+    width: 100%;
+    border-bottom: 2px dashed white;
+    position: absolute;
+    top: calc(50% - 2px);
+}
+
+.car {
+    width: 64px;
+    transform: rotate(180deg);
+    position: relative;
+}
+
+.marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: -90%;
+}
+
+.traffic-light {
+    width: 12px;
+    height: 30px;
+    background: rgb(78, 78, 78);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light {
+    width: 6px;
+    height: 6px;
+    background-color: yellow;
+    position: relative;
+    border-radius: 100%;
+}
+
+.light::before {
+    content: '';
+    width: inherit;
+    height: inherit;
+    background-color: red;
+    position: absolute;
+    bottom: 8px;
+    border-radius: 100%;
+}
+
+.light::after {
+    content: '';
+    width: inherit;
+    height: inherit;
+    background-color: green;
+    position: absolute;
+    top: 8px;
+    border-radius: 100%;
+}
+
+.marker span {
+    margin: 4px 0;
+}
+
+ 
+
+.car-1 {
+    animation-name: go-straight;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.car-2 {
+    animation-name: stop-middle;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.car-3 {
+    animation-name: stop-at-50;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+
+.car-4 {
+    animation-name: stop-at-90;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+
+.car-4 {
+    animation-name: go-straight;
+    animation-delay: 4s;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.car-6 {
+    animation-name: start-rotate-start;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes stop-at-90 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 90%;
+    }
+}
+
+@keyframes stop-at-50 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes go-straight {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 90%
+    }
+}
+
+@keyframes stop-middle {
+    0% {
+        left: 0%;
+    }
+
+    45% {
+        left: 45%;
+    }
+
+    55% {
+        left: 50%;
+    }
+
+    90% {
+        left: 90%;
+    }
+}
+
+@keyframes start-rotate-start {
+    0% {
+        left: 0%;
+        transform: rotate(180deg)
+    }
+
+    45% {
+        left: 90%;
+        transform: rotate(180deg)
+    }
+
+    80% {
+        left: 90%;
+        transform: rotate(0deg)
+    }
+
+    100% {
+        left: 0%;
+        transform: rotate(0deg)
+    }
+}
