@@ -1,0 +1,13 @@
+@import 'colors';
+
+html, body {
+    background-color: $main-background; ;
+}
+
+body {
+    display: flex;
+}
+
+main {
+    flex-grow: 1;
+}

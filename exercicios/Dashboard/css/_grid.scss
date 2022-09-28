@@ -1,0 +1,43 @@
+$columns: 12;
+$gutter: 12px;
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: $gutter;
+    margin: 32px 0;
+}
+
+.row {
+    flex-grow: 1;
+    display: flex; 
+    flex-wrap: wrap;  
+    gap: 12px 0;
+}
+
+
+%col {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;   
+    min-height: 20px;
+}
+
+
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        @extend %col;
+        width: calc(100% / $columns * $i - $gutter);
+        margin: 0 ($gutter / 2);
+        // &:not(:first-child), &:not(:last-child) {
+        // }
+
+        // &:first-child {
+        //     margin: 0 ($gutter / 2) 0 0;
+        // }
+        // &:last-child {
+        //     margin: 0 0 0 ($gutter / 2);
+        // }
+
+    }
+}

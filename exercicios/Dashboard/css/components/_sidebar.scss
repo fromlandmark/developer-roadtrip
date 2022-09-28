@@ -1,0 +1,57 @@
+@import '../colors';
+
+
+
+.sidebar {
+    width: 296px;
+    height: 100%;
+    min-height: 100vh;
+    background: $white;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        padding: 12px 8px;
+        margin: 8px 0;
+        border-radius: 4px;
+        transition: all .4s;
+        &:hover {
+            cursor: pointer;
+            background: map-get($map: $primary, $key: "100" );
+            color: $white;
+        }
+    }
+}
+
+.sidebar {
+    &__header {
+        height: 72px;
+    }
+    &__body {
+flex-grow: 1;
+        align-content: flex-start;
+    }
+    &__footer {
+        margin-top: auto;
+     }
+}
+
+.sidebar__information {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 4px;
+
+    &__header, &__description {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}

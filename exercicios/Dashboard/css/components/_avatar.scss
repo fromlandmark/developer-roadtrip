@@ -1,0 +1,13 @@
+.avatar {
+    width: 32px;
+    height: 32px;
+    background: gainsboro;
+    border-radius: 4px;
+    img {
+        width: inherit;
+        object-fit: cover;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
