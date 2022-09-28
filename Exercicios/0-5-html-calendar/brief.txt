@@ -1,0 +1,9 @@
+1 - Create a div inside the body with the class .calendar__container
+2 - Inside .calendar__container create two divs
+    2.1 first div .calendar__container__header
+    2.2 second div .calendar__wrapper
+
+3 - Inside .calendar__container__header create a button
+    3.1 - button classes - .btn .btn-small
+
+4 - Inside .calendar__wrapper, create a table element. Show me your best and recreate the preview.png attached in this folder.
