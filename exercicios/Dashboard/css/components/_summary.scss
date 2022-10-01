@@ -1,0 +1,46 @@
+@import '../colors';
+
+.summary {
+    display: flex;
+    height: 350px;
+    font-size: 0.8rem;
+    padding: 16px;
+    width: 100%;
+    &__axys {
+        width: 40px;
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    &__data {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-around;
+        .summary__column {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 24px;
+            &__wrapper {
+                position: relative;
+                background: map-get($map: $primary, $key: "10");
+                width: 12px;
+                flex-grow: 1;
+                border-radius: 12px;
+                overflow: hidden;
+                &__value {
+                    position: absolute;
+                    bottom: 0;
+                    height: 50%;
+                    width: 100%;
+                    background: map-get($map: $primary, $key: "100");
+                    border-radius: 12px;
+                }
+            }
+            .summary__label {
+                height: 20px;
+            }
+        }
+    }
+}

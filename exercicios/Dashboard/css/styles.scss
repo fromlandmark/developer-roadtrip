@@ -1,7 +1,7 @@
 @import 'reset';
+@import 'variables';
 @import 'colors';
 @import 'typography';
-
 
 @import 'main';
 @import 'helpers';
@@ -10,4 +10,9 @@
 // components
 @import 'components/nav';
 @import 'components/avatar';
-@import 'components/sidebar'
+@import 'components/sidebar';
+@import 'components/content-group';
+@import 'components/icons';
+@import 'components/module';
+
+@import 'components/summary'

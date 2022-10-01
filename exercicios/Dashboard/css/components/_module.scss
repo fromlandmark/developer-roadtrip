@@ -1,0 +1,55 @@
+@import '../variables';
+@import '../colors';
+ 
+.module {
+    background: white;
+    width: calc(100% - $gutter);
+    border-radius: 12px;
+    color: gray;
+    margin: #{$gutter / 2} 0;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 64px;
+        padding: 0 16px;
+        .module__title {
+            font-size: 1.2rem;
+            color: map-get($map: $black, $key: "100")
+
+        }
+    }
+    &__body {
+        min-height: 120px;
+        display: flex;
+    }
+}
+
+// backgrounds
+@each $name, $value in $primary {
+    .module--primary--#{$name} {
+        background-color: $value;
+        * {
+
+            @if str-length($string: $name) < 50 {
+                color: $white;
+            }
+        }
+    } 
+}
+
+@each $name, $value in $secondary {
+    .module--secondary--#{$name} {
+        background-color: $value;
+    }
+   
+}
+
+@each $name, $value in $black {
+    .module--black--#{$name} {
+        background-color: $value;
+        @if str-length($string: $name) < 50 {
+            color: $white;
+        }
+    } 
+}

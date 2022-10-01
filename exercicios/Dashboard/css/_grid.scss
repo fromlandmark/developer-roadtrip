@@ -1,34 +1,32 @@
-$columns: 12;
-$gutter: 12px;
+@import 'variables';
+
 .container {
     display: flex;
     flex-direction: column;
     padding: 12px;
-    gap: $gutter;
-    margin: 32px 0;
+     margin: 32px 0;
 }
 
 .row {
     flex-grow: 1;
     display: flex; 
     flex-wrap: wrap;  
-    gap: 12px 0;
-}
+ }
 
 
 %col {
     display: flex;
     flex-wrap: wrap; 
     min-height: 20px;
+    justify-content: center;
 }
 
 
 @for $i from 1 through $columns {
     .col-#{$i} {
         @extend %col;
-        width: calc(100% / $columns * $i - $gutter);
-        margin: 0 ($gutter / 2);
-        // &:not(:first-child), &:not(:last-child) {
+        width: calc(100% / $columns * $i );
+         // &:not(:first-child), &:not(:last-child) {
         // }
 
         // &:first-child {

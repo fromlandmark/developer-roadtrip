@@ -93,3 +93,16 @@ $units: (
 		padding: #{$value + "px"} 0;
 	}
 }
+
+
+// flex helpers
+$flex-props: flex-start, flex-end, center, space-between, space-around, space-evenly;
+
+@each $prop in $flex-props {
+	.align-#{$prop} {
+		align-items: $prop
+	}
+	.justify-#{$prop} {
+		justify-content: $prop
+	}
+}

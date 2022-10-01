@@ -1,0 +1,30 @@
+@import '../colors';
+
+.icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// backgrounds
+@each $name, $value in $primary {
+    .icon--primary--#{$name} {
+        background-color: $value;
+    } 
+}
+
+@each $name, $value in $secondary {
+    .icon--secondary--#{$name} {
+        background-color: $value;
+    }
+   
+}
+
+@each $name, $value in $black {
+    .icon--black--#{$name} {
+        background-color: $value;
+    } 
+}
