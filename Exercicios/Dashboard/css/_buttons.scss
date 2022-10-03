@@ -1,0 +1,42 @@
+@import 'colors';
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 0;
+    gap: 8px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+// colors
+ 
+@each $name, $value in $primary {
+    .btn--primary--#{$name} {
+        background-color: $value;
+        * {
+
+            @if str-length($string: $name) < 50 {
+                color: $white;
+            }
+        }
+    } 
+}
+
+@each $name, $value in $secondary {
+    .btn--secondary--#{$name} {
+        background-color: $value;
+    }
+   
+}
+
+@each $name, $value in $black {
+    .btn--black--#{$name} {
+        background-color: $value;
+        @if str-length($string: $name) < 50 {
+            color: $white;
+        }
+    } 
+}

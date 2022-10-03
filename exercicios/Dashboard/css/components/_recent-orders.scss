@@ -1,0 +1,34 @@
+@import '../colors';
+
+.recent_orders {
+     
+    
+    .empty_state {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        &__thumbnail {
+            width: 100px;
+            height: 100px;
+            align-self: center;
+            background: gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            border: 2px solid #c3c3c3;
+        }
+        &__description {
+            h3 {
+            font-size: 1.5rem;
+            color: map-get($map: $black, $key: "100");
+            margin: 0;
+            }
+            p {
+                width: clamp(45ch, 100%, 60ch);
+                text-align: center;
+                padding: 12px 0;
+            }
+        }
+    }
+}
